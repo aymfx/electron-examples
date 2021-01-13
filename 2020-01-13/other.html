@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他页面</title>
+</head>
+
+<body>
+    asdada
+    <script>
+        const {
+            ipcRenderer,
+        } = require("electron");
+        ipcRenderer.on('ping', (event, arg) => {
+            console.log("来自主页面的回话", arg)
+            ipcRenderer.sendToHost('message', '小哥我给你发信息了')
+        })
+    </script>
+</body>
+</html>
