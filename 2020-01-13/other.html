@@ -8,15 +8,10 @@
 </head>
 
 <body>
-    asdada
+    其他页面
     <script>
-        const {
-            ipcRenderer,
-        } = require("electron");
-        ipcRenderer.on('ping', (event, arg) => {
-            console.log("来自主页面的回话", arg)
-            ipcRenderer.sendToHost('message', '小哥我给你发信息了')
-        })
+        console.log('xxx')
     </script>
 </body>
+
 </html>

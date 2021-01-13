@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
+
 let win;
 let ids = {
   "index.html": null,
@@ -10,23 +11,15 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
+      enableRemoteModule: true, //启用remote
       webviewTag: true, //需要设置webview来启用这个
     },
   });
   const contents = win.webContents;
   contents.openDevTools(); //打开调试工具
-  win.loadURL("http://127.0.0.1:5500/2020-01-11/index.html");
-  ids["index.html"] = contents.id;
+  // win.loadFile("index.html");
+  win.loadURL("http://127.0.0.1:5500/2020-01-13/index.html");
 }
-
-ipcMain.on("registerFrameId", (event, arg) => {
-  console.log(arg);
-  ids = Object.assign(ids, arg);
-});
-
-ipcMain.on("getFrameId", (event, arg) => {
-  event.returnValue = ids[arg];
-});
 
 app.whenReady().then(createWindow);
 app.on("window-all-closed", () => {
@@ -40,3 +33,10 @@ app.on("activate", () => {
     createWindow();
   }
 });
+// process.env.age = 11;
+// setTimeout(() => {
+//   process.env.age = 121;
+// }, 3000);
+
+const ipc = require("./ipc");
+app.ipc = ipc;
