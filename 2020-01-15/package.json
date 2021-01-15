@@ -1,0 +1,19 @@
+{
+  "name": "2020-01-15",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.1.1"
+  },
+  "dependencies": {
+    "mousetrap": "^1.6.5",
+    "node-notifier": "^9.0.0"
+  }
+}
