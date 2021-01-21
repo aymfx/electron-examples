@@ -5,21 +5,21 @@
 // });
 // console.log("中间");
 
-console.log("show:", process.defaultApp);
-console.log("show:", process.isMainFrame);
-console.log("show:", process.mas);
-console.log("show:", process.noAsar);
-console.log("show:", process.noDeprecation);
-console.log("show:", process.resourcesPath);
-console.log("show:", process.resourcesPath);
-console.log("show:", process.sandboxed);
-console.log("show:", process.throwDeprecation);
-console.log("show:", process.traceDeprecation);
-console.log("show:", process.traceProcessWarnings);
-console.log("show:", process.type);
-console.log("show:", process.versions.chrome);
-console.log("show:", process.versions.electron);
-console.log("show:", process.windowsStore);
+// console.log("show:", process.defaultApp);
+// console.log("show:", process.isMainFrame);
+// console.log("show:", process.mas);
+// console.log("show:", process.noAsar);
+// console.log("show:", process.noDeprecation);
+// console.log("show:", process.resourcesPath);
+// console.log("show:", process.resourcesPath);
+// console.log("show:", process.sandboxed);
+// console.log("show:", process.throwDeprecation);
+// console.log("show:", process.traceDeprecation);
+// console.log("show:", process.traceProcessWarnings);
+// console.log("show:", process.type);
+// console.log("show:", process.versions.chrome);
+// console.log("show:", process.versions.electron);
+// console.log("show:", process.windowsStore);
 
 /**
 show: true
@@ -39,7 +39,7 @@ show: 11.2.0
 show:
  */
 
- /**
+/**
 renderer.js:8 show: undefined
 renderer.js:9 show: true
 renderer.js:10 show: undefined
@@ -55,3 +55,26 @@ renderer.js:19 show: renderer
 renderer.js:20 show: 87.0.4280.141
 renderer.js:21 show: 11.2.0
   */
+
+// const { ipcRenderer } = require("electron");
+console.log()
+
+// ipcRenderer.invoke()
+document.addEventListener("drop", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+
+  for (const f of e.dataTransfer.files) {
+    let img = document.querySelector(".img");
+    console.log("File(s) you dragged here: ", f.path);
+    img.src = f.path;
+  }
+});
+document.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+});
+
+//renderer.js:67 File(s) you dragged here:  undefined
+
+//File(s) you dragged here:  /Users/liuyang/Desktop/a.png

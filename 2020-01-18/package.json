@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron . --auth-server-whitelist='*example.com, *foobar.com, *baz'"
   },
   "keywords": [],
   "author": "",

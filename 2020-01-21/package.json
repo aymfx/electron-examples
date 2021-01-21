@@ -1,0 +1,21 @@
+{
+  "name": "2020-01-21",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron . --debug",
+    "build:mac": "electron-builder --mac --x64",
+    "build:win": "electron-builder --win --ia32"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-builder": "^22.9.1",
+    "electron": "^11.2.0"
+  },
+  "dependencies": {
+    
+  }
+}

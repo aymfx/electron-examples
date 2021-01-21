@@ -15,23 +15,33 @@ app.whenReady().then(() => {
   });
   const contents = win.webContents;
   contents.openDevTools(); //打开调试工具
+  // process.crash();
+  // process.getProcessMemoryInfo().then((res) => {
+  //   console.log(res); //{ private: 62572, shared: 32 }
+  // });
+
+  // console.log(process.getSystemMemoryInfo()); //{ total: 16777216, free: 14788 }
+  // console.log(process.getSystemVersion()); //11.1.0
+  // console.log(process.takeHeapSnapshot("index.js")); //true
+  // console.log(process.hang()); // 挂起 不显示 页面不显示了
+
   win.loadFile("index.html");
 
-  console.log("show:", process.defaultApp);
-  console.log("show:", process.isMainFrame);
-  console.log("show:", process.mas);
-  console.log("show:", process.noAsar);
-  console.log("show:", process.noDeprecation);
-  console.log("show:", process.resourcesPath);
-  console.log("show:", process.resourcesPath);
-  console.log("show:", process.sandboxed);
-  console.log("show:", process.throwDeprecation);
-  console.log("show:", process.traceDeprecation);
-  console.log("show:", process.traceProcessWarnings);
-  console.log("show:", process.type);
-  console.log("show:", process.versions.chrome);
-  console.log("show:", process.versions.electron);
-  console.log("show:", process.windowsStore);
+  // console.log("show:", process.defaultApp);
+  // console.log("show:", process.isMainFrame);
+  // console.log("show:", process.mas);
+  // console.log("show:", process.noAsar);
+  // console.log("show:", process.noDeprecation);
+  // console.log("show:", process.resourcesPath);
+  // console.log("show:", process.resourcesPath);
+  // console.log("show:", process.sandboxed);
+  // console.log("show:", process.throwDeprecation);
+  // console.log("show:", process.traceDeprecation);
+  // console.log("show:", process.traceProcessWarnings);
+  // console.log("show:", process.type);
+  // console.log("show:", process.versions.chrome);
+  // console.log("show:", process.versions.electron);
+  // console.log("show:", process.windowsStore);
 });
 
 app.on("window-all-closed", () => {
